@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "console-importer",
+    "version": "1.0.0",
+    "description": "chrome 控制台下载npm包插件",
+    "icons": {
+        "16": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+    },
+    "browser_action": {
+        "default_icon": "img/icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "js/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        "js/logger.js",
+        "js/inject.js"
+    ]
+}
